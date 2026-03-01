@@ -104,22 +104,65 @@ address {
     margin: 0 24px 24px 24px;
     padding-top: 24px;
 }
-.contacts {
+/* check
+.nav {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     gap: 40px;
     padding: 24px 0;
-    display: inline-block;
+    display: flex;
+    transition-property: color;
+        transition-duration: 250ms;
+        transition-timing-function: linear;
 }
-.contacts a:hover,
-.contacts a:focus {
+.nav a:hover,
+.nav a:focus {
     color: #404BBF;
     font-size: 16px;
     letter-spacing: 0.02em;
     font-weight: 500;
     line-height: 1.5;
+}
+    */
+.link {
+    /*
+    padding: 24px 0;
+    display: inline-block;
+    position: relative;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    */
+        font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+            gap: 40px;
+            padding: 48px 0 24px 0;
+            display: inline-block;
+                position: relative;
+            transition-property: color;
+            transition-duration: 250ms;
+            transition-timing-function: linear;
+}
+.link:hover,
+.link:focus {
+        color: #404BBF;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            font-weight: 500;
+            line-height: 1.5;
+}
+.link:active::after {
+    content: "";
+    width: 48px;
+    height: 4px;
+    background-color: #404BBF;
 }
 .address {
     text-decoration: none;
@@ -133,6 +176,9 @@ address {
     color: #434455;
     padding: 24px 0;
     display: inline-block;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 }
 .address:hover,
 .address:focus {
@@ -153,14 +199,13 @@ address {
 .span-header {
     color: #4d5ae5;
 }
-.link {
-    padding: 24px 0;
-    display: inline-block;
-}
 .bg-image {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7)), url(../images/office.png);
-        max-width: 1440px;
-        border: 1px solid #000;
+    max-width: 1440px;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin: 0 auto;
 }
 /* #endregion */
 /* #region page-title */
@@ -191,6 +236,10 @@ address {
     margin-left: auto;
     margin-right: auto;
     border: none;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 }
 .button:hover,
 .button:focus {
@@ -215,6 +264,9 @@ address {
     width: 264px;
     height: 112px;
     background-color: #f4f4fd;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
 }
 /* #endregion */
 /* #region hero */
@@ -223,8 +275,9 @@ address {
 }
 .team-image {
     background-color: #FFFFFF;
-    max-width: calc((100% - 3 * 24px)/ 4);
+    max-width: 264px;
     border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .team-title {
     text-align: center;
@@ -252,6 +305,11 @@ address {
     background-color: #4d5ae5;
     gap: 24px;
     flex-direction: row;
+    transition: background-color 250ms linear;
+}
+.icon-wrap:hover,
+.icon-wrap:focus {
+    background-color: #404bbf;
 }
 .icons {
     fill: #FFFFFF;
@@ -276,6 +334,26 @@ address {
 }
 .portfolio-img {
     flex-basis: calc((100% - 2 * 24px) / 3)
+}
+.box {
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+padding: 8px;
+    background-color: #3f51b5;
+    color: #fff;
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 250ms ease-in-out;
+    transform: translateY(100%);
+}
+.box:hover .overlay {
+    transform: translateX(0);
 }
 /* #endregion */
 /* #region fotter */
